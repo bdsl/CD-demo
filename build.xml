@@ -19,11 +19,11 @@
         />
     </target>
     <target name="metrics">
-        <exec executable="vendor/bin/phpmetrics" passthru="true" checkreturn="true">
-            <arg line="--report-html=reports/generated/phpmetrics/src src"/>
+        <exec executable="vendor/bin/phpmetrics" passthru="false" checkreturn="true">
+            <arg line="--report-html=reports/generated/phpmetrics/src --junit=reports/generated/phpunit/phpunit.xml src"/>
         </exec>
-        <exec executable="vendor/bin/phpmetrics" passthru="true" checkreturn="true">
-            <arg line="--report-html=reports/generated/phpmetrics/tests tests"/>
+        <exec executable="vendor/bin/phpmetrics" passthru="false" checkreturn="true">
+            <arg line="--report-html=reports/generated/phpmetrics/tests tests"/> <!-- it looks like phpmetrics ignores my test class for some reason -->
         </exec>
     </target>
 </project>
