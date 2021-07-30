@@ -5,8 +5,14 @@ jobs:
       - image: cimg/php:8.0.8
     steps:
       - checkout
-      - run: composer install
-      - run: ./bin/phing commit-stage
+      - run:
+          name: install dependancies
+          command: composer install
+      - run:
+          name: commit stage
+          command: ./bin/phing commit-stage
+      - store_test_results:
+          path: reports/phpunit
       - store_artifacts:
           path: reports
 
