@@ -18,3 +18,5 @@
 ###< phpunit/phpunit ###
 
 /reports/generated
+
+/bin/infection

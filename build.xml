@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="CDDemo" default="commit-stage">
-    <target name="commit-stage" depends="delete-reports, static-analysis, unit-test, metrics"/>
+    <target name="commit-stage" depends="delete-reports, static-analysis, unit-test, mutation-test, metrics"/>
 
     <target name="delete-reports">
         <delete dir="reports/generated" includeemptydirs="false"/>
@@ -24,6 +24,12 @@
         </exec>
         <exec executable="vendor/bin/phpmetrics" passthru="false" checkreturn="true">
             <arg line="--report-html=reports/generated/phpmetrics/tests tests"/> <!-- it looks like phpmetrics ignores my test class for some reason -->
+        </exec>
+    </target>
+    <target name="mutation-test">
+        <exec executable="bin/download-tools" passthru="true" checkreturn="true"/>
+        <exec executable="bin/infection" passthru="true" checkreturn="true">
+            <env key="XDEBUG_MODE" value="coverage"/>
         </exec>
     </target>
 </project>

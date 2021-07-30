@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+[ -f bin/infection ] || wget -O bin/infection https://github.com/infection/infection/releases/download/0.23.0/infection.phar
+chmod u+x bin/infection
