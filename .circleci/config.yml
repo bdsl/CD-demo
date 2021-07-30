@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   commit:
     docker:
-      - image: cimg/php:8.0.8
+      - image: circleci/php:8.0.6-fpm
     steps:
       - checkout
       - run:

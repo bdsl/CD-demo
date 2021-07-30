@@ -5,7 +5,8 @@
         ]
     },
     "logs": {
-        "text": "reports\/generated\/infection\/infection.log"
+        "text": "reports\/generated\/infection\/infection.log",
+        "summary": "reports\/generated\/infection\/infection-summary.log"
     },
     "mutators": {
         "@default": true
