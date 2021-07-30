@@ -7,6 +7,8 @@ jobs:
       - checkout
       - run: composer install
       - run: ./bin/phing commit-stage
+      - store_artifacts:
+          path: reports
 
 workflows:
   deployment_pipeline:

@@ -8,5 +8,6 @@
     </target>
     <target name="unit-test">
         <exec executable="bin/phpunit" passthru="true" checkreturn="true"/>
+        <phpunitreport todir="reports/phpunit" infile="reports/phpunit/phpunit.xml" format="frames" usesorttable="true"/>
     </target>
 </project>
