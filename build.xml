@@ -28,8 +28,7 @@
     </target>
     <target name="mutation-test">
         <exec executable="bin/download-tools" passthru="true" checkreturn="true"/>
-        <exec executable="bin/infection" passthru="true" checkreturn="true">
-            <env key="XDEBUG_MODE" value="coverage"/>
+        <exec command="XDEBUG_MODE=coverage bin/infection" passthru="true" checkreturn="true">
         </exec>
     </target>
 </project>
