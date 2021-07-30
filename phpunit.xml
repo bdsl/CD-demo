@@ -35,7 +35,7 @@
     </listeners>
 
     <logging>
-        <junit outputFile="reports/phpunit/phpunit.xml"/>
+        <junit outputFile="reports/generated/phpunit/phpunit.xml"/>
     </logging>
     
     <!-- Run `composer require symfony/panther` before enabling this extension -->

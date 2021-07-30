@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project name="CDDemo" default="commit-stage">
-    <target name="commit-stage" depends="static-analysis, unit-test"/>
+    <target name="commit-stage" depends="delete-reports, static-analysis, unit-test, metrics"/>
 
+    <target name="delete-reports">
+        <delete dir="reports/generated" includeemptydirs="false"/>
+    </target>
     <target name="static-analysis">
         <exec executable="vendor/bin/psalm" passthru="true" checkreturn="true"/>
     </target>
     <target name="unit-test">
         <exec executable="bin/phpunit" passthru="true" checkreturn="true"/>
-        <phpunitreport todir="reports/phpunit" infile="reports/phpunit/phpunit.xml" format="frames" usesorttable="true"/>
+        <phpunitreport todir="reports/generated/phpunit" infile="reports/phpunit/phpunit.xml" format="frames" usesorttable="true"/>
+    </target>
+    <target name="metrics">
+        <exec executable="vendor/bin/phpmetrics" passthru="true" checkreturn="true">
+            <arg line="--report-html=reports/generated/phpmetrics/src src"/>
+        </exec>
+        <exec executable="vendor/bin/phpmetrics" passthru="true" checkreturn="true">
+            <arg line="--report-html=reports/generated/phpmetrics/tests tests"/>
+        </exec>
     </target>
 </project>

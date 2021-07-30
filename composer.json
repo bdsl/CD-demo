@@ -48,6 +48,7 @@
         "vimeo/psalm": "^4.8"
     },
     "require-dev": {
+        "phpmetrics/phpmetrics": "^2.7",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "^5.3",
         "symfony/css-selector": "^5.3",
