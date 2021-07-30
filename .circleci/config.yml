@@ -5,7 +5,7 @@ jobs:
       - image: cimg/php:8.0.8
     steps:
       - checkout
-      - run: php --version
+      - run: composer install
 
 workflows:
   deployment_pipeline:
