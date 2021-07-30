@@ -6,8 +6,7 @@ jobs:
     steps:
       - checkout
       - run: composer install
-      - run: ./vendor/bin/psalm
-      - run: ./bin/phpunit
+      - run: ./bin/phing commit-stage
 
 workflows:
   deployment_pipeline:
