@@ -12,7 +12,8 @@ class FizzBuzzTest extends TestCase
     /**
      * @dataProvider fizzBuzAnswers
      */
-    public function testReturnsStringForIntegerAccordingToFizzBuzRules(int $integer, string $expected){
+    public function testReturnsStringForIntegerAccordingToFizzBuzRules(int $integer, string $expected): void
+    {
         self::assertSame($expected, FizzBuzz::intToString($integer));
     }
 

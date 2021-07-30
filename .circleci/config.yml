@@ -6,6 +6,7 @@ jobs:
     steps:
       - checkout
       - run: composer install
+      - run: ./vendor/bin/psalm
       - run: ./bin/phpunit
 
 workflows:
