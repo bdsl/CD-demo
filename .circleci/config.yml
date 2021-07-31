@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   commit:
     docker:
-      - image: jakzal/phpqa:php8.0-alpine
+      - image: cimg/php:8.0.8
     steps:
       - checkout
       - run:
