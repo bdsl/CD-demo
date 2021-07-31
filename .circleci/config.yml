@@ -5,6 +5,10 @@ jobs:
       - image: cimg/php:8.0.8
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-composer-deps-{{ checksum "composer.lock" }}
+            - v1-binary-deps
       - run:
           name: install dependancies
           command: composer install
@@ -15,6 +19,14 @@ jobs:
           path: reports/phpunit
       - store_artifacts:
           path: reports
+      - save_cache:
+          key: v1-composer-deps-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      - save_cache:
+          key: v1-binary-deps
+          paths:
+            - bin
 
 workflows:
   deployment_pipeline:
