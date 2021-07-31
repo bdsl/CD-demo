@@ -11,7 +11,7 @@
         "text": "reports\/generated\/infection\/infection.log",
         "summary": "reports\/generated\/infection\/infection-summary.log"
     },
-    "minMsi": 40,
+    "minMsi": 95,
     "mutators": {
         "@default": true
     }
