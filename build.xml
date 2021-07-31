@@ -28,7 +28,7 @@
     </target>
     <target name="mutation-test">
         <exec executable="bin/download-tools" passthru="true" checkreturn="true"/>
-        <exec command="XDEBUG_MODE=coverage bin/infection" passthru="true" checkreturn="true" output="reports/generated/infection.txt">
+        <exec command="phpdbg -qrr bin/infection" passthru="true" checkreturn="true" output="reports/generated/infection.txt">
         </exec>
     </target>
 </project>
