@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   commit:
     docker:
-      - image: circleci/php:8.0.6-fpm
+      - image: jakzal/phpqa:php8.0-alpine
     steps:
       - checkout
       - run:
