@@ -28,6 +28,7 @@
     </target>
     <target name="mutation-test">
         <exec executable="bin/download-tools" passthru="true" checkreturn="true"/>
+        <mkdir dir="reports/generated"/>
         <mkdir dir="reports/generated/infection"/>
         <exec command="phpdbg -qrr bin/infection" passthru="true" checkreturn="true" output="reports/generated/infection/infection.txt">
         </exec>
