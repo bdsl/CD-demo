@@ -8,6 +8,8 @@ jobs:
       - restore_cache:
           keys:
             - v1-composer-deps-{{ checksum "composer.lock" }}
+      - restore_cache:
+          keys:
             - v1-binary-deps
       - run:
           name: install dependancies
